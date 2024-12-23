@@ -1,14 +1,21 @@
-function createStars() {
-    const container = document.querySelector("body");
-    for (let i = 0; i < 1000; i++) {
-      // Increase the number of stars to 1000
-      const star = document.createElement("div");
-      star.className = "star";
-      star.style.width = ".1px";
-      star.style.height = ".1px";
-      star.style.top = Math.random() * 100 + "%";
-      star.style.left = Math.random() * 100 + "%";
-      container.appendChild(star);
-    }
+function createStars(numStars) {
+  const body = document.body;
+
+  for (let i = 0; i < numStars; i++) {
+      const star = document.createElement('div'); 
+      star.classList.add('star');
+
+      // Randomize star position
+      const x = Math.random() * window.innerWidth; 
+      const y = Math.random() * window.innerHeight; 
+
+      // Position the star
+      star.style.left = `${x}px`;
+      star.style.top = `${y}px`;
+
+      // Append star to the body
+      body.appendChild(star);
   }
-  createStars();
+}
+
+createStars(1); 
