@@ -22,16 +22,16 @@ body {
     transform: translate(-50%, -50%);
     width: 80px;
     height: 80px;
-    background: radial-gradient(circle, yellow, orange);
+    background: radial-gradient(circle, #ffa600, #ff9d00);
     border-radius: 50%;
-    box-shadow: 0 0 40px 20px yellow;
+    box-shadow: 0 0 80px 70px rgb(255, 255, 59);
 }
 
 .orbit {
     position: absolute;
     top: 50%;
     left: 50%;
-    border: 1px dashed rgba(255, 255, 255, 0.5); /* Dashed orbit line */
+    border: 1px dashed #ffffff; /* Dashed orbit line */
     border-radius: 50%;
     transform: translate(-50%, -50%);
 }
@@ -106,8 +106,8 @@ body {
 }
 
 .saturn img {
-    width: 70px;
-    height: 70px;
+    width: 50px;
+    height: 50px;
 }
 
 /* Style for the stars */
@@ -115,7 +115,7 @@ body {
     position: absolute;
     width: 2px; 
     height: 2px;
-    background-color: white; 
+    background-color: #ffffff; 
     border-radius: 50%; 
     opacity: 0.8; 
     animation: twinkle 3s infinite; 
@@ -133,10 +133,18 @@ body {
 
 
 @keyframes twinkle {
-    0%, 100% {
+    0%,100% {
+        opacity: 1;
+    }
+    25%,50% {
         opacity: 0.8;
     }
-    50% {
-        opacity: 0.3;
+}
+
+/* Responsivement */
+@media screen and (min-width: 789px) {
+    .solar-system {
+        width: 600px;
+        height: 600px;
     }
 }

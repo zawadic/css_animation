@@ -5,11 +5,11 @@ function createStars(numStars) {
       const star = document.createElement('div'); 
       star.classList.add('star');
 
-      // Randomize star position
+      // Randomize stars position creation
       const x = Math.random() * window.innerWidth; 
       const y = Math.random() * window.innerHeight; 
 
-      // Position the star
+      // Positioning the stars
       star.style.left = `${x}px`;
       star.style.top = `${y}px`;
 
@@ -18,4 +18,4 @@ function createStars(numStars) {
   }
 }
 
-createStars(1); 
+createStars(900); 

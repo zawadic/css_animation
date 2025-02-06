@@ -1,0 +1,90 @@
+/* General reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background: #1e1e2f; /* Dark gradient background */
+    font-family: Arial, sans-serif;
+  }
+  
+  .container {
+    text-align: center;
+  }
+  
+  /* Button styling */
+  #loaderButton {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 200px;
+    height: 50px;
+    background: #ff7eb3;
+    border: none;
+    border-radius: 8px;
+    color: white;
+    font-size: 24px;
+    cursor: pointer;
+    transition: 0.3s ease-in-out;
+    overflow: hidden;
+  }
+  
+  #loaderButton:hover {
+    background: #ff5898;
+  }
+  
+  /* Button loader */
+  .loader {
+    position: absolute;
+    width: 40px;
+    height: 40px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .hidden {
+    display: none;
+  }
+  
+  /* Spinning animation */
+  .spinner {
+    width: 40px;
+    height: 40px;
+    border: 10px solid rgba(255, 255, 255, 0.3);
+    border-top: 10px solid aqua;
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+  }
+
+  #loaderButton:focus i{
+    font-size: 30px;
+    font-weight: bolder;
+    color: #ffffff;
+  }
+  
+  #loaderButton:focus .loader-text {
+    justify-content: start;
+    align-items: start;
+  }
+  
+  /* Spinning keyframes */
+  @keyframes spin {
+    0% {
+      transform: rotate(0deg);
+    }
+    100% {
+      transform: rotate(360deg);
+    }
+  }
+  
