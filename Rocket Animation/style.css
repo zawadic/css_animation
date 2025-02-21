@@ -1,0 +1,104 @@
+body {
+    background-color: black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
+
+/*Title Styling*/
+
+.title {
+    font-size: 32px;
+    font-weight: bold;
+    color: #ffffff;
+}
+
+/* Container for the rocket */
+.rocket-container {
+    position: relative;
+    width: 100px;
+    height: 300px;
+}
+
+/* Rocket Body */
+.rocket {
+    position: absolute;
+    width: 60px;
+    height: 150px;
+    background: #ffffff;
+    margin-left: 20px;
+    border-radius: 0 0 30px 30px;
+    top: 0;
+}
+
+/* Rocket Triangle Head */
+.rocket-head {
+    position: absolute;
+    width: 0;
+    height: 0;
+    border-left: 30px solid transparent;
+    border-right: 30px solid transparent;
+    border-bottom: 50px solid #ff6347;
+    top: -50px;
+    left: 0;
+}
+
+/* Circle at the bottom of the rocket head */
+.rocket-astronout {
+    position: absolute;
+    bottom: 130px;  /* Adjust this for the desired position */
+    left: 50%;
+    width: 30px;  /* Size of the circle */
+    height: 30px;  /* Size of the circle */
+    border-radius: 50%;
+    background-color: aqua;
+    border: 3px solid red;  /* Red border */
+    transform: translateX(-50%); /* Center the circle horizontally */
+}
+
+/* Rocket Wings */
+.wing-left, .wing-right {
+    position: absolute;
+    width: 30px;
+    height: 50px;
+    background-color: #ffffff;
+    top: 100px;
+}
+
+.wing-left {
+    left: -10px;
+    transform: rotate(30deg);
+}
+
+.wing-right {
+    right: -10px;
+    transform: rotate(-30deg);
+}
+
+/* Rocket Flames */
+.fire {
+    position: absolute;
+    bottom: -100px;
+    left: 20px;
+    width: 20px;
+    height: 100px;
+    box-shadow: 0 0px 30px rgb(255, 255, 255); /* Adjusted box-shadow */
+    background: linear-gradient(to bottom, #ff3c3c, #ffffff);
+    border-radius: 0 0 30px 30px;
+}
+
+/* Rocket Movement */
+.rocket-flying {
+    animation: rocketFly 3s linear infinite;
+}
+
+@keyframes rocketFly {
+    0% {
+        transform: translateY(0);
+    }
+    100% {
+        transform: translateY(-1000px);
+    }
+}

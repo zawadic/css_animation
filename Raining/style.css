@@ -10,9 +10,23 @@ html, body {
     overflow: hidden;
 }
 
+.sun{
+    position: absolute;
+    top: 2%;
+    left: 50%;
+    width: 200px;
+    height: 200px;
+    background-color: #f5b02f;
+    border-radius: 100px;
+    box-shadow: 0 190px 200px yellow;
+    transform: translateX(-50%);
+    align-self: start;
+}
+
+
 .cloud {
     position: relative;
-    top: 20%;
+    top: 15%;
     left: 50%;
     width: 400px;
     height: 150px;
@@ -71,21 +85,133 @@ html, body {
     }
 }
 
-/* Ground styling (green section at the bottom) */
+/* Plane design */
+.plane {
+    width: 180px;
+    height: 150px;
+    margin-left: 200px;
+    animation: flyPlane 4s linear infinite;
+}
+
+/* Define the flying animation */
+@keyframes flyPlane {
+    0% {
+        transform: translate(0vw, -20%) ; /* Start at the left */
+    }
+    25% {
+        transform: translate(25vw, -35%) ; /* Upward motion */
+    }
+    50% {
+        transform: translate(50vw, -50%) ; /* At the top of the screen */
+    }
+    75% {
+        transform: translate(75vw, -35%) ; /* Downward motion */
+    }
+    100% {
+        transform: translate(100vw, -20%) ; /* Finish at the right */
+    }
+}
+
+/* Ground and Pond styling (green section at the bottom) */
 .ground {
     position: absolute;
     bottom: 0;
     width: 100%;
-    height: 50px; /* Height of the ground */
+    height: 180px; /* Height of the ground */
     background-color: #4caf50; /* Green color for the ground */
     z-index: 1;
+    align-items: flex-end;
 }
+
+.pond {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    height: 100px; /* Height of the pond */
+    background: aqua;
+    z-index: 2;
+}
+
+@keyframes water-wave {
+    0%{
+        transform: rotate(0deg);
+    }
+    100%{
+        transform: rotate(360deg);
+    }
+}
+
+/*House Design*/
+/* House Container */
+.house {
+    position: fixed;
+    bottom: 150px;
+    left: 230px;
+    width: 300px;
+    height: 250px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-end;
+    transition: all 0.3s ease-in-out;
+    z-index: 10;
+}
+
+/* Roof */
+.roof {
+  width: 100%;
+  height: 0;
+  border-left: 50px solid transparent;
+  border-right: 50px solid transparent;
+  border-bottom: 70px solid #c85e17; /* Roof color */
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+/* House Body */
+.house-body {
+    width: 100%;
+    height: 180px;
+    background-color: #c6c6c6; /* House body color */
+    position: relative;
+}
+
+/* Door */
+.door {
+    width: 75px;
+    height: 150px;
+    background-color: #8b4513; /* Door color */
+    position: absolute;
+    bottom: 0px;
+    left: 112px; /* Adjusted position so the door is centered */
+    border-radius: 5px;
+}
+
+/* Windows */
+.windows {
+    display: flex;
+    justify-content: space-between; /* Changed to space-between for better alignment */
+    position: absolute;
+    top: 40px; /* Adjusted to place windows inside the house */
+    left: 15px; /* Adjusted to place windows within the house */
+    width: 270px;
+}
+
+.window {
+    width: 65px;
+    height: 65px;
+    background-color: #c78b60; /* Window color */
+    border: 2px solid #000; /* Window border */
+    border-radius: 5px;
+}
+
+  
 
 .tree-container {
     position: fixed; /* Fix the trees to the bottom of the page */
     bottom: 0; /* Position at the bottom */
     display: flex;
-    justify-content: space-around;
     align-items: flex-end;
     height: 300px; /* Adjust this to set the height of the container */
     width: 100%; /* Ensure the container spans the full width of the page */
@@ -103,40 +229,28 @@ html, body {
 
 /* Leaves - The foliage of the tree */
 .tree .leaf {
-    width: 250px; /* Larger leaves */
+    width: 200px; /* Larger leaves */
     height: 200px; /* Larger leaves */
     border-radius: 100px;
-    margin-bottom: 0.5px; /* Pull the leaves up to overlap with the trunk */
+    margin-bottom: -10px; /* Pull the leaves up to overlap with the trunk */
 }
 
 /* Tree 1 leaves */
 .tree1 .leaf::before {
     content: '';
     position: absolute;
-    background-color: #78ffb0;
+    background-color: #038403;
     border-radius: 50%;
     width: 200px;
     height: 150px;
     top: -50px;
     left: 1px;
-    box-shadow: 30px 0px 0px 30px #78ffb0;
+    box-shadow: 10px 0 0 0 #00ff00;
 }
+
 
 /* Tree 2 leaves */
 .tree2 .leaf::before {
-    content: '';
-    position: absolute;
-    background-color: #1b871b;
-    border-radius: 50%;
-    width: 200px;
-    height: 150px;
-    top: -50px;
-    left: 1px;
-    box-shadow: 30px 0px 0px 30px #1b871b;
-}
-
-/* Tree 3 leaves */
-.tree3 .leaf::before {
     content: '';
     position: absolute;
     background-color: #00ff00;
@@ -145,25 +259,193 @@ html, body {
     height: 150px;
     top: -50px;
     left: 1px;
-    box-shadow: 30px 0px 0px 30px #00ff00;
+    box-shadow: 10px 0 0 0 #00ff00;
 }
 
 /* Tree trunks */
 .tree .trunk {
     width: 50px; /* Wider trunk */
-    height: 380px; /* Taller trunk */
+    height: 500px; /* Taller trunk */
     background-color: chocolate;
 }
 
 /* Different tree styles */
 .tree1 .leaf {
-    background-color: #78ffb0; /* Lighter green for tree 1 */
+    background-color: #038403; /* Lighter green for tree 1 */
 }
 
 .tree2 .leaf {
-    background-color: #1b871b; /* Darker green for tree 2 */
-}
-
-.tree3 .leaf {
     background-color: #00ff00; /* Standard green for tree 3 */
 }
+
+.boat{
+    position: sticky;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 250px;
+    height: 110px;
+    animation: boat-animation 5s linear infinite;
+}
+
+@keyframes boat-animation {
+    0% {
+        transform: translateX(-350px);
+    }
+    100% {
+        transform: translateX(350px);
+    }
+}
+
+/*Farm Design*/
+.farmhouse{
+    position: fixed; /* Fix the farmhouse to the bottom of the page */
+    bottom: 0; /* Position at the bottom */
+    display: flex;
+    left: 300px;
+    align-items: flex-end;
+    transition: all 0.3s ease-in-out;
+    z-index: 10; /* Ensure the house stays above other elements */
+    width: 300px;
+    height: 100px;
+  }
+
+ .farmhouse-roof {
+    width: 100%;
+    height: 0px;
+    border-left: 70px solid transparent;
+    border-right: 70px solid transparent;
+    border-bottom: 100px solid yellow; /* Farmhouse roof color */
+    position: relative;
+    bottom: 330px;
+    left: 250px;
+ }
+
+ .farmhouse-body {
+  width: 100%;
+  height: 180px;
+  background-color: #808080; /* Farmhouse body color */
+  position: absolute;
+  bottom: 150px;
+  left: 250px;
+}
+
+
+/*Cow Design*/
+.cow {
+    position: absolute;
+    top: 0px;
+    display: flex;
+    left: 70px;
+    align-items: flex-end;
+    transition: all 0.3s ease-in-out;
+    z-index: 10; /* Ensure the house stays above other elements */
+    width: 135px;
+    height: 100px;
+    border-radius: 50% 50% 20% 20%;
+  }
+  
+  .cow-head {
+    position: absolute;
+    top: 30px;
+    left: 60px;
+    width: 135px;
+    height: 100px;
+    background-color: #fff;
+    border-radius: 50%;
+    border: 4px solid black;
+  }
+  
+  .ear {
+    position: absolute;
+    top: 0;
+    width: 30px;
+    height: 40px;
+    background-color: #fff;
+    border-radius: 50%;
+    border: 3px solid black;
+  }
+  
+  .ear1 {
+    left: -15px;
+    transform: rotate(-30deg);
+  }
+  
+  .ear2 {
+    right: -15px;
+    transform: rotate(30deg);
+  }
+  
+  .horn {
+    position: absolute;
+    width: 20px;
+    height: 35px;
+    background-color: #333;
+    border-radius: 10px;
+  }
+  
+  .horn1 {
+    left: 20px;
+    transform: rotate(-30deg);
+  }
+  
+  .horn2 {
+    right: 20px;
+    transform: rotate(35deg);
+  }
+  
+  .eye {
+    position: absolute;
+    top: 12px;
+    width: 10px;
+    height: 13px;
+    background-color: #000;
+    border-radius: 50%;
+  }
+
+  .eye.left {
+    left: 52px;
+    margin: 2px;
+  }
+
+  .eye.right {
+    right: 52px;
+    margin: 2px;
+  }
+
+
+  .mouth {
+    position: absolute;
+    bottom: 10px;
+    left: 35px;
+    background-color: #ffcc99;
+    border-radius: 15px;
+    border: 2px solid #e5a300;
+    animation: chewing 1s ease-in-out infinite;
+  }
+
+  /* Cow nose */
+  .nose {
+    position: absolute;
+    bottom: 44px;
+    left: 45px;
+    width: 40px;
+    height: 20px;
+    background-color: #ff9999;
+    border-radius: 50%;
+    border: 2px solid #e5a300;
+  }
+   
+  @keyframes chewing {
+    0% {
+      width: 50px;
+      height: 30px;
+    }
+    50% {
+      width: 60px;
+      height: 35px;
+    }
+    100% {
+      width: 50px;
+      height: 30px;
+    }
+  }

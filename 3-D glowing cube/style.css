@@ -11,9 +11,9 @@ body {
     justify-content: center;
     align-items: center;
     height: 100vh;
-    background: linear-gradient(135deg,#5ece65, #2cfc02);
+    background: linear-gradient(90deg,#5ece65, #2cfc02);
     font-family: Arial, sans-serif;
-    color: #fff;
+    color: #000;
     overflow: hidden;
 }
 
