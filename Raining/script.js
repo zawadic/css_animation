@@ -7,6 +7,7 @@ function createRaindrop() {
 
   // Randomize position of each raindrop beneath the cloud
   drop.style.left = Math.random() * 350 + 'px'; // Adjust based on cloud width
+  drop.style.bottom =  100 + 'px'; // Adjust based on cloud width
   drop.style.animationDuration = (Math.random() * 1 + 1) + 's'; // Randomize drop speed
 
   raindropContainer.appendChild(drop);
@@ -18,4 +19,4 @@ function createRaindrop() {
 }
 
 // Create raindrops continuously
-setInterval(createRaindrop, 10);
+setInterval(createRaindrop, 1);

@@ -2,17 +2,9 @@ body {
     background-color: black;
     display: flex;
     justify-content: center;
-    align-items: center;
+    align-items: end;
     height: 100vh;
     margin: 0;
-}
-
-/*Title Styling*/
-
-.title {
-    font-size: 32px;
-    font-weight: bold;
-    color: #ffffff;
 }
 
 /* Container for the rocket */
@@ -24,12 +16,10 @@ body {
 
 /* Rocket Body */
 .rocket {
-    position: absolute;
+    position: relative;
     width: 60px;
-    height: 150px;
+    height: 140px;
     background: #ffffff;
-    margin-left: 20px;
-    border-radius: 0 0 30px 30px;
     top: 0;
 }
 
@@ -48,14 +38,21 @@ body {
 /* Circle at the bottom of the rocket head */
 .rocket-astronout {
     position: absolute;
-    bottom: 130px;  /* Adjust this for the desired position */
+    bottom: 120px;  /* Adjust this for the desired position */
     left: 50%;
-    width: 30px;  /* Size of the circle */
-    height: 30px;  /* Size of the circle */
+    width: 40px;  /* Size of the circle */
+    height: 40px;  /* Size of the circle */
     border-radius: 50%;
     background-color: aqua;
     border: 3px solid red;  /* Red border */
     transform: translateX(-50%); /* Center the circle horizontally */
+}
+
+/*Text Styling*/
+h1{
+    font-family: 'Algerian';
+    font-size: 90px;
+    align-self: center;
 }
 
 /* Rocket Wings */
@@ -91,7 +88,7 @@ body {
 
 /* Rocket Movement */
 .rocket-flying {
-    animation: rocketFly 3s linear infinite;
+    animation: rocketFly 5s  infinite;
 }
 
 @keyframes rocketFly {

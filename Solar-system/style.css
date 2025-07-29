@@ -20,8 +20,8 @@ body {
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    width: 80px;
-    height: 80px;
+    width: 280px;
+    height: 280px;
     background: radial-gradient(circle, #ffa600, #ff9d00);
     border-radius: 50%;
     box-shadow: 0 0 80px 70px rgb(255, 255, 59);
@@ -31,26 +31,26 @@ body {
     position: absolute;
     top: 50%;
     left: 50%;
-    border: 1px dashed #ffffff; /* Dashed orbit line */
+    border: 1.5px dashed #ffffff; /* Dashed orbit line */
     border-radius: 50%;
     transform: translate(-50%, -50%);
 }
 
 .mercury-orbit {
-    width: 120px;
-    height: 120px;
+    width: 320px;
+    height: 320px;
     animation: rotate-orbit 4s linear infinite;
 }
 
 .venus-orbit {
-    width: 180px;
-    height: 180px;
+    width: 510px;
+    height: 510px;
     animation: rotate-orbit 6s linear infinite;
 }
 
 .earth-orbit {
-    width: 240px;
-    height: 240px;
+    width: 560px;
+    height: 560px;
     animation: rotate-orbit 8s linear infinite;
 }
 
@@ -61,32 +61,32 @@ body {
 }
 
 .jupiter-orbit {
-    width: 400px;
-    height: 400px;
+    width: 410px;
+    height: 410px;
     animation: rotate-orbit 12s linear infinite;
 }
 
 .saturn-orbit {
-    width: 500px;
-    height: 500px;
+    width: 550px;
+    height: 550px;
     animation: rotate-orbit 14s linear infinite;
 }
 
 .uranus-orbit {
-    width: 600px;
-    height: 600px;
+    width: 650px;
+    height: 650px;
     animation: rotate-orbit 16s linear infinite;
 }
 
 .neptune-orbit {
-    width: 700px;
-    height: 700px;
+    width: 750px;
+    height: 750px;
     animation: rotate-orbit 18s linear infinite;
 }
 
 .planet {
     position: absolute;
-    top: 50%;
+    top: 65%;
     left: 0;
     transform: translate(-50%, -50%);
     width: 30px;
@@ -94,15 +94,15 @@ body {
 }
 
 .planet img {
-    width: 100%;
-    height: 100%;
+    width: 150%;
+    height: 150%;
     object-fit: contain;
     border-radius: 50%; /* Make planet images circular */
 }
 
 .jupiter img {
-    width: 60px;
-    height: 60px;
+    width: 100px;
+    height: 100px;
 }
 
 .saturn img {

@@ -1,0 +1,138 @@
+body {
+  background: linear-gradient(to bottom, #6c5ce7, #fd79a8);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  margin: 0;
+  overflow: hidden;
+  font-family: 'Comic Sans MS', cursive;
+}
+
+h1#message {
+  font-size: 3em;
+  color: white;
+  margin-bottom: 20px;
+  opacity: 0;
+  transition: opacity 1s ease;
+  animation: bounce 1s infinite alternate;
+}
+
+@keyframes bounce {
+  0% { transform: translateY(0); }
+  100% { transform: translateY(-10px); }
+}
+
+.cake {
+  position: relative;
+  cursor: pointer;
+  animation: float 3s ease-in-out infinite;
+}
+
+.plate {
+  width: 200px;
+  height: 100px;
+  background: #ffffff;
+  border-radius: 50%;
+  position: absolute;
+  bottom: -30px;
+  right: -15px;
+}
+
+.layer {
+  height: 40px;
+  margin: 0 auto;
+  position: relative;
+  border-radius: 10px 10px 0 0;
+}
+
+.layer-bottom {
+  width: 120px;
+  background: #f88db1;
+  top: 0px;
+}
+
+.layer-middle {
+  width: 140px;
+  background: #ffe388;
+  bottom: 0px;
+}
+
+.layer-top {
+  width: 160px;
+  background: #fd8383;
+  top: 0;
+}
+
+.candle {
+  width: 10px;
+  height: 30px;
+  background: #ffffff;
+  border: 2px solid #000000;
+  position: absolute;
+  top: -30px;
+  transform: translateX(-50%);
+  border-radius: 2px;
+}
+
+.candle.cr {
+  left: 70%;
+}
+
+.candle.cl {
+  left: 30%;
+}
+
+.flame {
+  width: 30px;
+  height: 30px;
+  background: #ff8000;
+  position: absolute;
+  top: -28px;
+  left: 50%;
+  transform: translateX(-50%);
+  border-radius: 50%;
+  animation: flicker 0.2s infinite alternate;
+  box-shadow: 0 0 20px #ff8000;
+}
+
+@keyframes flicker {
+  0% { transform: translateX(-50%) scale(1); opacity: 1; }
+  100% { transform: translateX(-50%) scale(1.2); opacity: 0.8; }
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-5px); }
+}
+
+#confetti {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+}
+
+@media (max-width: 500px) {
+  .cake {
+    transform: scale(0.7);
+  }
+
+  h1#message {
+    font-size: 2em;
+  }
+}
+
+@keyframes drop {
+  0% {
+    transform: translate(-50%, -50%) scale(1);
+    opacity: 1;
+  }
+  100% {
+    transform: translate(var(--x, 0), 600px) scale(0.5);
+    opacity: 0;
+  }
+}
