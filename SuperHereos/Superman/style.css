@@ -1,0 +1,274 @@
+body {
+  margin: 0;
+  background: #95d5f1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.scene {
+  position: relative;
+  width: 300px;
+  height: 400px;
+}
+
+.superman {
+  position: relative;
+  top: 50px;
+  width: 80px;
+  height: 180px;
+}
+
+.head {
+  width: 45px;
+  height: 45px;
+  background: #ffe0bd;
+  border-radius: 50%;
+  margin: 0 auto;
+  z-index: 2;
+  position: relative;
+}
+
+.hair {
+  width: 45px;
+  height: 15px;
+  background: #000;
+  border-radius: 50% 50% 0 0;
+}
+
+.eye {
+  position: absolute;
+  width: 10px;
+  height: 10px;
+  background: #000;
+  border-radius: 50%;
+  top: 18px;
+}
+
+.eye.left {
+  left: 5px;
+}
+
+.eye.right {
+  right: 5px;
+}
+
+.mouth {
+  position: absolute;
+  top: 32px;
+  left: 12px;
+  width: 20px;
+  height: 2px;
+  border-radius: 50px;
+  background: #000;
+}
+
+.body {
+  width: 60px;
+  height: 90px;
+  background: blue;
+  margin: 0 auto;
+  border-radius: 0 0 10px 10px;
+  position: relative;
+}
+
+.logo {
+  left: 15%;
+  top: 10px;
+  color: red;
+  height: 40px;
+  width: 40px;
+  background-color: yellow;
+  position: absolute;
+  border-radius: 15px;
+  transform: rotate(45deg);
+}
+
+.logo h1 {
+  position: absolute;
+  font-weight: bolder;
+  font-family: Arial, sans-serif;
+  font-size: 28px;
+  margin-top: 10%;
+  margin-left: 30%;
+  transform: rotate(-45deg);
+}
+
+.arm {
+  top: 45px;
+  width: 20px;
+  height: 75px;
+  background: blue;
+  position: absolute;
+  transform-origin: top right;
+}
+
+.arm.left {
+  left: -5px;
+  transform: rotate(10deg);
+}
+
+.arm.right {
+  top: 40px;
+  right: -1px;
+  transform: rotate(345deg);
+}
+
+.hand {
+  width: 20px;
+  height: 15px;
+  background: #e9ccac;
+  position: absolute;
+  border-radius: 5px 5px 20px 20px;
+  bottom: -15px; 
+  left: 0;
+  transform-origin: top center;
+}
+
+
+
+.cape {
+  width: 80px;
+  background: red;
+  position: absolute;
+  top: 40px;
+  left: 0;
+  z-index: -1;
+  border-radius: 0 0 20px 20px;
+  animation: fly 2s infinite ease-in-out;
+}
+
+.leg {
+  top: 130px;
+  width: 20px;
+  height: 70px;
+  background: blue;
+  position: absolute;
+  transform-origin: top right;
+}
+
+.leg.left {
+  left: 10px;
+}
+
+.leg.right {
+  right: 10px;
+}
+
+.shoe {
+  width: 20px;
+  height: 30px;
+  background: #000;
+  position: absolute;
+  bottom: -25px;
+  left: 0;
+  border-radius: 0 0 20px 20px;
+  transform-origin: top center;
+}
+
+.shoe.left {
+  transform: rotate(30deg); 
+}
+
+.shoe.right {
+  transform: rotate(-30deg);
+}
+
+.btn-section {
+  top: 250px;
+  position: absolute;
+  margin-left: -30%;
+}
+
+.btn {
+  height: 30px;
+  border: none;
+  border-radius: 10px;
+  margin: 5px;
+  font-weight: bold;
+}
+
+.btn-punch {
+  color: #fff;
+  width: 55px;
+  background-color: #0b03ff;
+}
+
+.btn-kick {
+  width: 50px;
+  background-color: #ffd903;
+}
+
+.btn-run {
+  width: 40px;
+  background-color: #18ff03;
+}
+
+.btn-laser {
+  color: #fff;
+  width: 90px;
+  background-color: #ff0303;
+}
+
+.btn-none {
+  color: #fff;
+  width: 50px;
+  background-color: #000;
+}
+
+@keyframes fly {
+  0%, 100% {
+    height: 110px;
+  }
+  50% {
+    height: 125px;
+  }
+}
+
+/* RUN ANIMATION */
+@keyframes runMove {
+  0%   { transform: translateX(0); }
+  50%  { transform: translateX(50px); }
+  100% { transform: translateX(0); }
+}
+
+@keyframes runArmLeft {
+  0%, 100% { transform: rotate(10deg); }
+  50%     { transform: rotate(-30deg); }
+}
+
+@keyframes runArmRight {
+  0%, 100% { transform: rotate(345deg); }
+  50%     { transform: rotate(390deg); }
+}
+
+@keyframes runLegRight {
+  0%, 100% { transform: rotate(0deg); }
+  50%     { transform: rotate(40deg); }
+}
+
+@keyframes runShoeRight {
+  0%, 100% { transform: rotate(-30deg); }
+  50%     { transform: rotate(10deg); }
+}
+
+.superman.running {
+  animation: runMove 1s ease-in-out;
+}
+
+.superman.running .arm.left {
+  animation: runArmLeft 1s ease-in-out;
+}
+
+.superman.running .arm.right {
+  animation: runArmRight 1s ease-in-out;
+}
+
+.superman.running .leg.right {
+  animation: runLegRight 1s ease-in-out;
+}
+
+.superman.running .shoe.right {
+  animation: runShoeRight 1s ease-in-out;
+}

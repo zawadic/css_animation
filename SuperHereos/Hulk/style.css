@@ -1,0 +1,118 @@
+body {
+  margin: 0;
+  background: #caf1cd;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.scene {
+  position: relative;
+  width: 200px;
+  height: 300px;
+}
+
+.hulk {
+  position: relative;
+  top: 50px;
+  width: 80px;
+  height: 180px;
+}
+
+.head {
+  width: 60px;
+  height: 60px;
+  background: #3fa300;
+  border-radius: 50%;
+  margin: 0 auto;
+  z-index: 2;
+  position: relative;
+}
+
+.eye{
+  position: absolute;
+  width: 10px;
+  height: 10px;
+  background: #000000;
+  border-radius: 50%;
+  top: 18px;
+}
+
+.eye.left{
+  left: 8px;
+}
+
+.eye.right{
+  right: 8px;
+}
+
+.mouth{
+  position: absolute;
+  top: 32px;
+  left: 12px;
+  width: 40px;
+  height: 15px;
+  border-radius: 50px;
+  background: #ffffff;
+}
+
+.body {
+  width: 80px;
+  height: 120px;
+  background: #3fa300;
+  border-radius: 50px;
+  margin: 0 auto;
+  border-radius: 0 0 10px 10px;
+  position: relative;
+}
+
+.pack-6{
+    position: absolute;
+    top: 40px;
+    left: 10px;
+}
+
+hr{
+    position: relative;
+    width: 55px;
+}
+
+.arm {
+  top: 71px;
+  width: 25px;
+  height: 85px;
+  background: #3fa300;
+  border-radius: 50px;
+  position: absolute;
+  transform-origin: top right;
+}
+
+.arm.left{
+  left: -3px;
+  transform: rotate(40deg);
+}
+
+.arm.right{
+  top: 55px;
+  right: -1px;
+  transform: rotate(325deg);
+}
+
+.leg {
+  top: 170px;
+  width: 30px;
+  height: 80px;
+  background: #3fa300;
+  border-radius: 5px;
+  position: absolute;
+  transform-origin: top right;
+}
+
+.leg.left{
+  left: 1px;
+}
+
+.leg.right{
+  right: 1px;
+}
